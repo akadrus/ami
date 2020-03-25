@@ -1,0 +1,10 @@
+# ami_version_0.0.1 - game config
+download: '~/kotor_mods/mods'
+override: '~/kotor_mods/override'
+temp: '~/kotor_mods/mods_temp'
+allowed_file_extensions:
+  - 'mdx'
+  - 'mdl'
+  - 'txi'
+  - 'tga'
+  - 'tif'

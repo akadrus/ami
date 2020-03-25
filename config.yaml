@@ -1,0 +1,167 @@
+# AMI_version_0.0.1
+# ROOT Directory
+# this is "main" dir in which AMI will find "basics" files for mods. In most cases it can be totally omitted.
+# AMI will define "main dir" without help or knowledge of user. Below I'll try to describe how it works.
+# AMI will search for first (the one of least depth in dirs tree) dir that have TGA / TXI / MDX / MDL files directly inside it.
+# then it will set it as root/main folder and copy all files to override. Causa finita.
+
+# MOD without Root directory
+# if AMI will get a type of mode where there is no such dir (method described above will return many dirs with the same level of nesting)
+# then AMI will jump to handling variants while setting root to the empty dir that is one level below dirs with variants.
+# so for example, if we have modification such like "missions eyes" and it has structure like this (tree below)
+#
+# - mission_eyes
+#   - blue_eyes
+#       - eyes.txi
+#   - green_eyes
+#       - eyes.txi
+#   - readme.txt
+#
+# then directory > mission_eyes < will be set as ROOT, even when it only has readme.txt and two child directories.
+#
+# HANDLING VARIANTS
+# if our modification have variants defined, AMI will try to install them, one by one.
+#
+# no ROOT found and no Variants defined
+
+# in this kind of event AMI will do nothing.
+# !!!!!
+# !!! CAUTION: At this moment keys: type, priority and preserve_only WONT WORK - WIP. !!!
+# tbt these features are not even 100% to be implemented
+# features are not sure
+# !!!!!
+
+# The simplest possible configuration: all you need to do is to paste full fileName (with extension)
+sh_animated_cantina_sign:
+    file_name: "SH_AnimatedCantinaSign.7z"
+    type: "Suggested"
+
+high_poly_grenades:
+    file_name: "hp_grenades-0-4-1209-0-4-1547556830.zip"
+    type: "Optional"
+
+hd_gzika:
+    file_name: "Emperor Turnip&#39;s Gizka.rar"
+    type: "Optional"
+
+hd_rakghouls:
+    file_name: "Emperor Turnip&#39;s HD Rakghouls.rar"
+    type: "Optional"
+
+individual_mandalorians:
+    file_name: "individualmandalorians.zip"
+    type: "Recommended"
+
+quanon_gammoreans:
+    file_name: "Quanon_Gammoreans.rar"
+    type: "Recommended"
+
+hd_twilek_female:
+    file_name: "hd_twilek_female.rar"
+    type: "Recommended"
+
+thigh-high_boots_for_twilek_body:
+    file_name: "[K1]_Thigh-High_Boots_For_Twilek_Body_MODDERS_RESOURCE.7z"
+    type: "Recommended"
+    variants:
+        npc_replacement:
+            path: "NPC Replacement"
+
+calo_nord_recolor:
+    file_name: "Calo Nord Recolor.zip"
+    type: "Suggested"
+
+mission_shorts:
+    file_name: "mission shorts.zip"
+    type: "Recommended"
+
+scoundrel_trousers:
+    file_name: "Scoundrel Trousers.zip"
+    type: "Optional"
+
+republic_soldier_fix:
+    file_name: "JC's Republic Soldier Fix for K1 v1.3.zip"
+    type: "Recommended"
+
+mtch_darkjedi:
+    file_name: "mtch_darkjedi.zip"
+    type: "Suggested"
+    variants:
+        main:
+            # simple construction, on left old name, on right new one
+            rename_files:
+                - ['PFBI01.tga', 'PFBI02.tga']
+                - ['PMBI01.tga', 'PMBI02.tga']
+
+malak_hd_by_dark_hope:
+    file_name: "Malak.rar"
+    type: "Suggested"
+    variants:
+        blue_eyes:
+            path: "Malak (Blue Eyes)"
+            delete_files:
+                - "N_JediMalekH02.tga"
+#        red_eyes:
+#            path: "Malak (Red Eyes)"
+#            delete_files:
+#                - "N_DarthMalakh01.tga"
+
+juhani_real_cathar_head:
+    file_name: "juhaniCathar"
+    type: "Recommended"
+
+quanons_HK47:
+    file_name: "Quanons_HK47_Reskin.rar"
+    type: "Recommended"
+    variants:
+        main:
+            delete_files:
+                - "PO_phk47.tga"
+
+Bastila_Shan_HD:
+    file_name: "Bastila HD.rar"
+    type: "Recommended"
+    variants:
+        main:
+            delete_files:
+                - "P_BastilaH04.tga"
+                - "P_BastilaH04.txi"
+                - "PO_pbastila.tga"
+
+HD_Carth_Onasi:
+    file_name: "Carth Onasi.rar"
+    type: "Recommended"
+    variants:
+        main:
+            delete-files:
+            - "P_CarthH01.tga"
+            - "P_CarthH01.txi"
+            - "PO_pcarth.tga"
+
+HD_Canderous_Ordo:
+    file_name: "Canderous Ordo.rar"
+    type: "Recommended"
+    variants:
+        main:
+            delete_files:
+                - "P_CandH01.tga"
+                - "P_CandH01.txi"
+                - "PO_pcanderous.tga"
+
+HD_Canderous_Ordo_patch:
+    file_name: "Canderous Patch.rar"
+    type: "Recommended"
+
+Quanons_Canderous_Ordo:
+    file_name: "Quanon_CandOrdo_Reskin"
+    type: "Recommended"
+    variants:
+        main:
+            preserve_files:
+                - "P_CandH01.tga"
+
+zalbar_hd:
+    file_name: "bigz.rar"
+    type: "Recommended"
+
+

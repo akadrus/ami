@@ -1,2 +1,2 @@
 # ami
-Aurora (Games) Mods (Batch) Installer
+AURORA (Game engine based games) MODS (Batch) INSTALLER
